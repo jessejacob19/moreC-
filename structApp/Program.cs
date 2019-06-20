@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 namespace structApp
 {
     class Program
@@ -36,12 +38,12 @@ namespace structApp
 
             var theFirstStringIs = listOfStrings[0];
             */
-            System.Collections.Generic.Dictionary<string, string> names = new System.Collections.Generic.Dictionary<string, string>();
+            Dictionary<string, string> names = new Dictionary<string, string>();
             names.Add("James", "Bond");
             names.Add("Money", "Penny");
 
             Console.WriteLine("The name is " + names["James"]);
-
+            names.Remove("James");
             //###############
             PetStruct dog = new PetStruct();
             dog.Type = PetType.Dog;
@@ -62,6 +64,22 @@ namespace structApp
             Console.WriteLine("a " + dog.Type + " has " + dog.Legs + " Legs");
             Console.WriteLine("a " + duck.Type + " has " + duck.Legs + " Legs");
 
+
+
+            // more List stuff
+            // linq query
+            List<PetClass> pets = new List<PetClass>();
+            pets.Add(new PetClass { HasFur = false, Legs = 2, Name = "Donald", Type = PetType.Duck });
+            pets.Add(new PetClass { HasFur = false, Legs = 2, Name = "Trump", Type = PetType.Dog });
+
+            List<PetClass> results = (from p in pets
+                                      where p.Type == PetType.Dog
+                                      select p).ToList();
+
+            Console.WriteLine("found " + results.Count + " Dogs");
+
+            // lambda query
+            PetClass result = pets.FirstOrDefault(p => p.Type == PetType.Dog);
             Console.ReadLine();
         }
     }
