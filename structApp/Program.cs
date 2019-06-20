@@ -13,7 +13,7 @@ namespace structApp
         }
         static void Main(string[] args)
         {
-            
+            /*
             int[] intArray = new int[5];
             string[] stringArray = new string[5];
 
@@ -35,8 +35,12 @@ namespace structApp
             listOfStrings.Sort();
 
             var theFirstStringIs = listOfStrings[0];
+            */
+            System.Collections.Generic.Dictionary<string, string> names = new System.Collections.Generic.Dictionary<string, string>();
+            names.Add("James", "Bond");
+            names.Add("Money", "Penny");
 
-            
+            Console.WriteLine("The name is " + names["James"]);
 
             //###############
             PetStruct dog = new PetStruct();
