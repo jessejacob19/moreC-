@@ -14,6 +14,17 @@ namespace structApp
         }
         static void Main(string[] args)
         {
+
+            int[] intArray = new int[5];
+            string[] stringArray = new string[5];
+
+            int[] populatedIntArray = new int[] { 0, 1, 2, 3, 4, 5 };
+
+            intArray[0] = 5;
+            intArray[2] = 15;
+
+            int firstValue = intArray[0];
+
             PetStruct dog = new PetStruct();
             dog.Type = PetType.Dog;
             dog.HasFur = true;
