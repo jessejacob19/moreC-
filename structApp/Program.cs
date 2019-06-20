@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace structApp
 {
     class Program
@@ -14,7 +13,7 @@ namespace structApp
         }
         static void Main(string[] args)
         {
-
+            
             int[] intArray = new int[5];
             string[] stringArray = new string[5];
 
@@ -22,9 +21,24 @@ namespace structApp
 
             intArray[0] = 5;
             intArray[2] = 15;
+            //int firstValue = intArray[0];
 
-            int firstValue = intArray[0];
+            //####### Lists
+            //not working for some reason
+            System.Collections.Generic.List<string> listOfStrings = new System.Collections.Generic.List<string>();
+            listOfStrings.Add("first String");
+            listOfStrings.Insert(0, "Inserted String");
 
+            listOfStrings.Remove("first String");
+            listOfStrings.RemoveAt(0);
+
+            listOfStrings.Sort();
+
+            var theFirstStringIs = listOfStrings[0];
+
+            
+
+            //###############
             PetStruct dog = new PetStruct();
             dog.Type = PetType.Dog;
             dog.HasFur = true;
